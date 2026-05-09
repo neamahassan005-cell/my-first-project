@@ -8,7 +8,6 @@ from razrc522 import RFID
 LAPTOP_URL = "http://192.168.8.152:5000/process_camera"
 RFID_API   = "https://smart-system-attendance-production-d4bd.up.railway.app/api/parking/enter/rfid"
 
-# ---------------- SERVO ----------------
 h = lgpio.gpiochip_open(0)
 SERVO_PIN = 13
 lgpio.gpio_claim_output(h, SERVO_PIN)
@@ -75,7 +74,6 @@ def send_rfid(card):
         print("[RFID SERVER ERROR]", e)
         return False
 
-# ---------------- SYSTEM ----------------
 class System:
     def __init__(self):
         self.cam = Picamera2()
@@ -133,7 +131,6 @@ class System:
 
         self.last_request = time.time()
 
-    # ---------------- RFID ----------------
     def handle_rfid(self):
 
         print("[RFID MODE] Waiting card...")
@@ -162,7 +159,7 @@ class System:
         print("[SWITCH] RFID â†’ CAMERA")
         self.mode = "camera"
 
-    # ---------------- MAIN LOOP ----------------
+    
     def start(self):
 
         while True:
