@@ -18,15 +18,12 @@ def angle_to_pulse(angle):
 def open_gate():
     print("ðŸ”¥ SERVO START")
 
-    # ÙØªØ­
     lgpio.tx_servo(h, SERVO_PIN, 1500)
     time.sleep(3)
 
-    # Ù‚ÙÙ„
     lgpio.tx_servo(h, SERVO_PIN, 500)
     time.sleep(1)
 
-    # ÙˆÙ‚Ù Ø§Ù„Ø¥Ø´Ø§Ø±Ø©
     lgpio.tx_servo(h, SERVO_PIN, 0)
 
     print("ðŸ”¥ SERVO DONE")
