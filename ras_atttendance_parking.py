@@ -89,7 +89,6 @@ class System:
 
         print("[SYSTEM] READY")
 
-    # ---------------- CAMERA ----------------
     def send_to_ai(self, frame):
         try:
             _, img = cv2.imencode('.jpg', frame)
